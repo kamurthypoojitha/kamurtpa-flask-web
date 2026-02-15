@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+
+    <h2>Welcome {{ user[1] }}!</h2>
+
+    <p><strong>First Name:</strong> {{ user[3] }}</p>
+    <p><strong>Last Name:</strong> {{ user[4] }}</p>
+    <p><strong>Email:</strong> {{ user[5] }}</p>
+    <p><strong>Address:</strong> {{ user[6] }}</p>
+
+    <hr>
+
+    <h3>Upload Limerick File</h3>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if word_count %}
+        <p><strong>Word Count in Limerick.txt:</strong> {{ word_count }}</p>
+        <a href="/download">Download Limerick.txt</a>
+    {% endif %}
+
+    <br><br>
+    <a href="/login">Logout</a>
+
+</body>
+</html>
